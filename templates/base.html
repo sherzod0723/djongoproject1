@@ -1,16 +1,18 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title> sherzod </title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<he>-->
-<!--    <a href="{% url 'about' %} ">Bosh sahifa</a>-->
-<!--    <a href="{% url 'home2' %}">sahifa haqida</a>-->
-<!--{% block content %}-->
-<!--{% endblock content %}-->
-
-<!-- </body>-->
-
-<!--body</html>-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{% if title %} {{title}} {% else %} Blog {% endif %}</title>
+    </head>
+    <body>
+    <header>
+        this is header
+    </header>
+        {% block content %}
+        {% endblock %}
+    <footer>
+        this footer
+    </footer>
+    </body>
+</html>

@@ -1,15 +1,10 @@
-<!--<!DOCTYPE html>-->
+{% extends 'base.html' %}
 
-<!--<head>-->
-<!--    <title> sardor </title>-->
-<!--</head>-->
-<!--<body>-->
-<!--{% extends 'base.html' %}-->
-
-<!--{% block content %}-->
-<!--<h1> Homepage </h1>-->
-<!--<p> salom  </p>-->
-<!--{% endblock content %}-->
-
-<!--</body>-->
-<!--</html>-->
+{% block content %}
+        <h1>My Posts</h1>
+	{% for post in posts%}
+	<h2>{{ post.title }}</h2>
+	<small>Published on {{ post.published_at }} by {{ post.author}}</small>
+	<p>{{ post.content }}</p>
+	{% endfor%}
+{% endblock %}

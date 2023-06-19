@@ -1,37 +1,28 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.views.generic import TemplateView
-# Create your views here.
 
+posts = [
+    {
+        'title': 'Beautiful is better than ugly',
+        'author': 'John Doe',
+        'content': 'Beautiful is better than ugly',
+        'published_at': 'October 1, 2022'
+    },
+    {
+        'title': 'Explicit is better than implicit',
+        'author': 'Jane Doe',
+        'content': 'Explicit is better than implicit',
+        'published_at': 'October 1, 2022'
+    }
+]
 
 
 def home(request):
-    return render(request, 'blog/home1.html')
+    context = {
+        'posts': posts,
+        'title': "onlayn shop"
+    }
+    return render(request, 'home.html', )
 
 
 def about(request):
-    return render(request, 'blog/about1.html')
-
-
-
-
-
-
-
-# def home(request):
-#     return HttpResponse('hi bro ')
-#
-# def about(request):
-#     return HttpResponse(f"biz haqimizda shu sahifada kuzatib yuborin, {request }")
-
-
-
-
-
-# class HomePageView(TemplateView):
-#     template_name = 'home.html'
-#
-#
-#
-# class AboutPageView(TemplateView):
-#     template_name = 'about.html'
+    return render(request, 'about.html',)
